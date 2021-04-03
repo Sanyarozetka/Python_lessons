@@ -15,8 +15,8 @@ amount = 0
 #
 q_even = 0
 q_uneven = 0
-num_min = 1
-num_max = 1
+num_min = 0
+num_max = 0
 while True:
     num = int(input("Введите число: "))
     if num == 0:
@@ -25,9 +25,12 @@ while True:
     amount += 1
     # num_list += [num]
     #
-    if num_max <= num:
+    if num_max == 0:
         num_max = num
-    elif num_min >= num:
+        num_min = num
+    if num > num_max:
+        num_max = num
+    elif num < num_min:
         num_min = num
     if num % 2 == 0:
         q_even += 1
