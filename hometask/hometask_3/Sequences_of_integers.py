@@ -35,8 +35,7 @@ while True:
 
 print("Количество введённых чисел " + str(amount))
 print("Сумма введённых чисел " + str(quantity))
-if num != 0:  # условие для устранения ошибки деления на 0
-    print("Cреднее арифметическое всех введённых чисел " + str(quantity / amount))
+print("Cреднее арифметическое всех введённых чисел " + str(quantity / amount))
 print("Максимальное значение " + str(num_max))
 print("Минимальное значение " + str(num_min))
 print("Количество чётных элементов " + str(q_even))
