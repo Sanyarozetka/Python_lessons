@@ -11,8 +11,6 @@
 
 quantity = 0
 amount = 0
-# num_list = []
-#
 q_even = 0
 q_uneven = 0
 num_min = 0
@@ -23,8 +21,6 @@ while True:
         break
     quantity += num
     amount += 1
-    # num_list += [num]
-    #
     if num_max == 0:
         num_max = num
         num_min = num
@@ -39,9 +35,8 @@ while True:
 
 print("Количество введённых чисел " + str(amount))
 print("Сумма введённых чисел " + str(quantity))
-print("Cреднее арифметическое всех введённых чисел " + str(quantity / amount))
-# print("Максимальное значение " + str(max(num_list)))
-# print("Минимальное значение " + str(min(num_list)))
+if num != 0:  # условие для устранения ошибки деления на 0
+    print("Cреднее арифметическое всех введённых чисел " + str(quantity / amount))
 print("Максимальное значение " + str(num_max))
 print("Минимальное значение " + str(num_min))
 print("Количество чётных элементов " + str(q_even))
