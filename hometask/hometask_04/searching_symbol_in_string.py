@@ -4,12 +4,12 @@
 
 Для решения НУЖНО использовать только функцию `find()`(rfind()), операторы `if` и `for`(while).
 """
+
 s = input("Введите строку: ")
 ch = input("Введите искомый символ: ")
 
 for i in range(len(s)):
-    if s[i] == ch:
-        print(s.find(ch, i))
-        i += 1
-    else:
-        i += 1
+    b = s.find(ch, i)
+    if b == i:
+        print(b)
+        i = b + 1
