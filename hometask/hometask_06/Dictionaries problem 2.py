@@ -22,7 +22,7 @@ s = "Tesla, Inc. is an American electric vehicle and clean energy company based 
     "1 million mark of electric cars produced. Tesla has been the subject of numerous lawsuits and controversies" \
     "arising from statements and acts of CEO Elon Musk, allegations of whistleblower retaliation, alleged worker" \
     "rights violations, and allegedly unresolved and dangerous technical problems with their products."
-
+# s = 'Tesla the'
 s = s.lower()
 s = s.replace(".", "")
 s = s.replace(",", "")
@@ -32,10 +32,10 @@ dic = {}
 for word in lst:
     new_dic = {word: lst.count(word)}
     dic.update(new_dic)
-# print(dic)
+#  print(dic)
 max_value = max(dic.values())
 dic1 = {key: value for key, value in dic.items() if value == max_value}
 if len(dic1) > 1:
-    print(dic1[-1])
+    print(list(dic1.items())[-1])
 else:
-    print(dic1)
+    print(list(dic1.items()))
