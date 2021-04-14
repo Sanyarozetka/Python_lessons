@@ -19,6 +19,6 @@ d = {'apple': ['malum', 'pomum', 'popula'],
 rev_d = {}
 
 for key, value in d.items():
-    rev_d1 = d.fromkeys(value, key)
+    rev_d1 = d.fromkeys(value, [key])
     rev_d.update(rev_d1)
 print(rev_d)
