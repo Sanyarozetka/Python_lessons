@@ -13,12 +13,13 @@ d = {
 }
 """
 
-d = {'apple': ['malum', 'pomum', 'popula'],
-     'fruit': ['baca', 'bacca', 'popum'],
-     'punishment': ['malum', 'multa']}
+d = {'apple': ['malum', 'pomum', 'popula'], 'fruit': ['baca', 'bacca', 'popum'], 'punishment': ['malum', 'multa']}
 rev_d = {}
 
-for key, value in d.items():
-    rev_d1 = d.fromkeys(value, [key])
-    rev_d.update(rev_d1)
+for key in d:
+    for value in d[key]:
+        if value not in rev_d:
+            rev_d[value] = [key]
+        else:
+            rev_d[value].append(key)
 print(rev_d)
