@@ -28,5 +28,6 @@ main_list = [
     [88112, 'Einfuhrung in Python3, Bernd Klein', 3, 24.99]
 ]
 
-m = list(tuple(map(lambda l: print(l[0], round((l[2] * l[3])))
-         if l[2] * l[3] >= 100 else print(l[0], round(l[2] * l[3] + 10, 2)), main_list)))
+m = list(map(lambda l: (l[0], (round((l[2] * l[3]), 2)))
+         if l[2] * l[3] >= 100 else (l[0], (round(l[2] * l[3] + 10, 2))), main_list))
+print(m)
