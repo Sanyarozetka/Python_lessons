@@ -1,5 +1,6 @@
 import random
 from pprint import pprint
+
 """
 Написать функцию сортировки двухмерного списка МхМ (матрицы)
 Значение М - задаётся пользователем, с клавиатуры. Может быть любым
@@ -56,13 +57,8 @@ from pprint import pprint
  224 224 253 268 272 280 287 292 301 334
 """
 
-# m = int(input("Введите количество M (5 и более) элементов двухмерного списка MxM: "))
-# lst = [[random.randint(1, 50) for i in range(m)] for j in range(m)]
-lst = [[47, 13, 46, 46, 22],
-       [15, 36, 13, 41, 33],
-       [41, 4, 2, 33, 31],
-       [15, 34, 5, 47, 50],
-       [19, 7, 42, 25, 46]]
+m = int(input("Введите количество M (5 и более) элементов двухмерного списка MxM: "))
+lst = [[random.randint(1, 50) for i in range(m)] for j in range(m)]
 sum_lst = []
 pprint(lst)
 print()
@@ -74,52 +70,24 @@ def bubble_sort(array):
         for j in range(len(array)):
             s += array[j][i]
         sum_lst.append(s)
+
     for q in range(len(array) - 1):
         if sum_lst[q] > sum_lst[q + 1]:
             sum_lst[q], sum_lst[q + 1] = sum_lst[q + 1],  sum_lst[q]
             for elem in array:
                 elem[q], elem[q + 1] = elem[q + 1], elem[q]
-
-
-    # for q in range(len(array) - 1):
-    #     for w in range(len(array) - 1):
-    #         if sum_lst[q] > sum_lst[q + 1]:
-    #             sum_lst[q], sum_lst[q + 1] = sum_lst[q + 1],  sum_lst[q]
-    #             array[w][q], array[w + 1][q] = array[w + 1][q], array[w][q]
-    # for k in range(len(array)):
-    #     for n in range(len(array[k]) - 1):
-    #         for a in range(len(array[k]) - 1 - n):
-    #             if k % 2 != 0:
-    #                 if array[a][n] < array[a + 1][n]:
-    #                     array[a][n], array[a + 1][n] = array[a + 1][n], array[a][n]
-    #             elif k % 2 == 0:
-    #                 if array[a][k] > array[a + 1][k]:
-    #                     array[a][k], array[a + 1][k] = array[a + 1][k], array[a][k]
-            # if array[k][l] > array[k + 1][l]:
-
-            # if sum(array[l]) > sum(array[l + 1]):
-            #     array[l], array[l + 1] = array[l + 1], array[l]
+    for f in range(len(array)):
+        for k in range(len(array)):
+            for n in range(len(array) - 1):
+                if k % 2 != 0:
+                    if array[n][k] > array[n + 1][k]:
+                        array[n][k], array[n + 1][k] = array[n + 1][k], array[n][k]
+                elif k % 2 == 0:
+                    if array[n][k] < array[n + 1][k]:
+                        array[n][k], array[n + 1][k] = array[n + 1][k], array[n][k]
 
 
 bubble_sort(lst)
-
-
-# def bubble_sort(array):
-#     for i in range(len(array) - 1):
-#         for j in range(len(array) - 1 - i):
-#             if sum(array[j]) > sum(array[j + 1]):
-#                 array[j], array[j + 1] = array[j + 1],  array[j]
-#     for k in range(len(array)):
-#         for n in range(len(array[k]) - 1):
-#             for a in range(len(array[k]) - 1 - n):
-#                 if k % 2 != 0:
-#                     if array[k][a] < array[k][a + 1]:
-#                         array[k][a], array[k][a + 1] = array[k][a + 1], array[k][a]
-#                 elif k % 2 == 0:
-#                     if array[k][a] > array[k][a + 1]:
-#                         array[k][a], array[k][a + 1] = array[k][a + 1], array[k][a]
-#     return array
-# [[row[i] for row in array] for i in range(len(array[0]))]
 
 
 def print_func(array):
