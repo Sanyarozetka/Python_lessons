@@ -1,6 +1,4 @@
 import random
-from pprint import pprint
-
 
 """
 Необходимо создать матрицу (двухмерный список) М х N. M и N задаёт пользователь
@@ -40,42 +38,23 @@ from pprint import pprint
 452 489 469 422 473 362 448 467 432 448
 """
 
+m = int(input("Введите количество M элементов двухмерного списка MxN: "))
+n = int(input("Введите количество N элементов двухмерного списка MxN: "))
+lst = [[random.randint(10, 50) for i in range(m)] for j in range(n)]
+lst_1 = []
 
-def print_func(array):
-    for i in range(len(array)):
-        print(' ' + '  '.join("{:^3}".format(i) for i in array[i]))
+for i in range(len(lst)):
+    elem = 0
+    for j in range(len(lst[i])):
+        elem += lst[i][j]
+    # lst[i].append(elem)
+    print(''.join("{:^4}".format(i) for i in lst[i]) + '  ' + '' .join('{:^1}'.format(elem)))
 
+for k in range(m):
+    elem = 0
+    for h in range(n):
+        elem += lst[h][k]
+    lst_1.append(elem)
 
-# m = int(input("Введите количество M элементов двухмерного списка MxN: "))
-# n = int(input("Введите количество N элементов двухмерного списка MxN: "))
-# lst = [[random.randint(1, 50) for i in range(m)] for j in range(n)]
-# pprint(lst)
-lst = [[44, 50, 32, 34, 17, 3],
-       [34, 17, 18, 33, 30, 34],
-       [24, 12, 39, 34, 46, 38],
-       [20, 3, 48, 31, 14, 9],
-       [45, 21, 18, 12, 5, 1],
-       [42, 17, 39, 41, 31, 37],
-       [5, 37, 48, 33, 25, 2]]
-
-print_func(lst)
-# for i in range(n):
-#     b = []
-#     c = 0
-#     for j in range(m):
-#         b.append(int(random() * 50))
-#         print("%4d" % b[j], end='')
-#         c += b[j]
-#     a.append(b)
-#     print('    ', c)
-#
-# for i in range(m):
-#     print("    ", end='')
-# print()
-#
-# for i in range(m):
-#     s = 0
-#     for j in range(n):
-#         s += a[j][i]
-#     print("%4d" % s, end='')
-# print()
+print()
+print(''.join("{:^4}".format(i) for i in lst_1))
