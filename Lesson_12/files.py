@@ -13,7 +13,7 @@
 # +           mix
 # """
 #
-from pprint import pprint as pp
+# from pprint import pprint as pp
 #
 # lst = [
 #     'Максимальное напряжение, B              250',
@@ -79,25 +79,26 @@ from pprint import pprint as pp
 # print()
 # pp(lst)
 #
-# read by line
+# # read by line
 # lst = []
-# file = open('example_file', encoding='utf-8')
+# pp(lst)
+# file = open('example_file.txt', encoding='utf-8')
 # for line in file:
 #     lst.append(line.strip('\n'))
 # file.close()
 # print()
-# pp(lst[0])
+# pp(lst)
 
-# size_buff = 32
-# src = open('orange.jpg', 'rb')
-# dst = open('orange_copy.jpg', 'wb')
-#
-# while True:
-#     data = src.read(size_buff)
-#     if data:
-#         dst.write(data)
-#     else:
-#         break
-#
-# src.close()
-# dst.close()
+size_buff = 32
+src = open('orange.jpg', 'rb')
+dst = open('orange_copy.jpg', 'wb')
+
+while True:
+    data = src.read(size_buff)
+    if data:
+        dst.write(data)
+    else:
+        break
+
+src.close()
+dst.close()
