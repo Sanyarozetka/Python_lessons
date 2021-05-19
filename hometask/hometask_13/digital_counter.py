@@ -7,25 +7,28 @@
 
 
 class DigitalCounter:
-    value = 0
-
-    def __init__(self, start=None, end=None):
+    def __init__(self, start, end, value=None):
         self.start = start
         self.end = end
+        if value is None:
+            self.value = self.start
+        else:
+            self.value = value
 
     def update_value(self):
         if self.value < self.end:
             self.value += 1
-            return self.value
         else:
-            return 'Out of range'
+            self.value = self.start
 
-    def print_value(self):
-        return print(self.update_value())
+    def return_value(self):
+        return self.value
+
+    def __str__(self):
+        return 'Current Value: {}'.format(self.value)
 
 
-count = DigitalCounter(start=0, end=3)
-count.print_value()
-count.print_value()
-count.print_value()
-count.print_value()
+count_value = DigitalCounter(0, 10)
+for _ in range(15):
+    print(count_value)
+    count_value.update_value()
