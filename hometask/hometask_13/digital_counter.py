@@ -25,7 +25,7 @@ class DigitalCounter:
         return self.value
 
     def __str__(self):
-        return 'Current Value: {}'.format(self.value)
+        return 'Current value: {}'.format(self.value)
 
 
 count_value = DigitalCounter(0, 10)
