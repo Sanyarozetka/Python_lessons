@@ -28,7 +28,7 @@ class DigitalCounter:
         return 'Current value: {}'.format(self.value)
 
 
-count_value = DigitalCounter(0, 10)
+count = DigitalCounter(0, 10)
 for _ in range(15):
-    print(count_value)
-    count_value.update_value()
+    print(count)
+    count.update_value()
